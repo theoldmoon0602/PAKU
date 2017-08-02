@@ -20,7 +20,7 @@ module.exports = {
     },
     resolve: {
 	modules: [
-	    __dirname + 'node_modules',
+	    __dirname + '/node_modules',
 	]
     },
     devServer: {

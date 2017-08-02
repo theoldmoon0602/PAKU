@@ -4,15 +4,23 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "server": "webpack-dev-server -w&"
+    "server": "webpack-dev-server"
   },
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "webpack": "^3.4.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.6.1"
+  },
+  "babel": {
+    "presets": [
+      "react"
+    ]
   }
 }
