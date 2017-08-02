@@ -8,7 +8,9 @@ class User extends React.Component {
     constructor() {
 	super()
 	this.state = {
-	    data: {}
+	    data: {},
+	    loaderClass: 'loader',
+	    userClass: 'hide'
 	}
     }
     // github からユーザ情報を取得してpromiseを返す
@@ -20,7 +22,11 @@ class User extends React.Component {
     componentWillMount() {
 	this.getUserInfo(this.props.match.params.username)
 	    .then((data) => {
-		this.setState({data})
+		this.setState({
+		    data,
+		    loaderClass: 'hide',
+		    userClass: 'user'
+		})
 	    })
 	    .catch((error) => {
 		console.log(error)
@@ -29,8 +35,8 @@ class User extends React.Component {
     render() {
 	return (
 	    <div>
-		<div className="loading"></div>
-		<div className="hide">
+		<div className={this.state.loaderClass}></div>
+		<div className={this.state.userClass}>
 		    <UserInfo data={this.state.data} />
 		    <Repositories data={this.state.data} />
 		</div>

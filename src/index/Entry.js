@@ -13,6 +13,7 @@ class Entry extends React.Component {
 	return (
 	    <form
 		onSubmit={this.handleSubmit}
+		className="entry"
 	    >
 		<input
 		    type="text"
